@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phạm Đăng Thư — Backend Developer</title>
+  <link rel="icon" type="image/png" href="avatar.jpg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <canvas id="canvas-bg"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo"><span>//</span> phamdangthu</div>
+    <button class="nav-toggle" id="nav-toggle">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" data-vi="Về tôi" data-en="About">Về tôi</a></li>
+      <li>
+        <a href="#experience" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</a>
+      </li>
+      <li>
+        <a href="#projects" data-vi="Dự án" data-en="Projects">Dự án</a>
+      </li>
+      <li>
+        <a href="#certifications" data-vi="Chứng chỉ" data-en="Certifications">Chứng chỉ</a>
+      </li>
+      <li>
+        <a href="#contact" data-vi="Liên hệ" data-en="Contact">Liên hệ</a>
+      </li>
+      <li>
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="btn-vi" onclick="setLang('vi')">
+            VI
+          </button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">
+            EN
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-tag" data-vi="Xin chào, tôi là" data-en="Hello, I'm">
+        Xin chào, tôi là
+      </div>
+      <h1 class="hero-name">Phạm Đăng <span class="accent">Thư</span></h1>
+      <div class="hero-typed">
+        <span class="typed-text" id="typed-role"></span><span class="cursor-blink"></span>
+      </div>
+      <p class="hero-desc" id="hero-desc">
+        Lập trình viên Backend đam mê xây dựng hệ thống web hiệu quả với
+        Laravel & PHP. Định hướng phát triển theo hướng RPA — tự động hóa quy
+        trình với UiPath, mang lại giá trị thực cho doanh nghiệp.
+        Tôi có chứng chỉ nghiệp vụ sư phạm tiểu học (Tin học), đồng thời luôn sẵn sàng học nhanh, thích nghi tốt và đóng góp bằng những giải pháp thực tế, ổn định cho doanh nghiệp và nhà nước.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary" data-vi="Xem dự án →" data-en="View Projects →">Xem dự án →</a>
+        <a href="#contact" class="btn-outline" data-vi="📬 Liên hệ tôi" data-en="📬 Contact Me">📬 Liên hệ tôi</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/phamdangthu2002" target="_blank" rel="noopener" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+        <a href="mailto:phamdangthu2002@gmail.com" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          Email
+        </a>
+        <a href="tel:0329921849" class="social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          0329.921.849
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">3+</div>
+          <div class="stat-label" data-vi="Dự án hoàn thành" data-en="Projects Done">
+            Dự án hoàn thành
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">1+</div>
+          <div class="stat-label" data-vi="Năm kinh nghiệm" data-en="Year Experience">
+            Năm kinh nghiệm
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">B1</div>
+          <div class="stat-label" data-vi="Tiếng Anh" data-en="English Level">
+            Tiếng Anh
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">CC Sư phạm</div>
+          <div class="stat-label" data-vi="Chứng chỉ sư phạm" data-en="Teaching Certificate">
+            Chứng chỉ sư phạm
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <div class="avatar-inner">
+          <img src="avatar.jpg" alt="Phạm Đăng Thư" />
+        </div>
+        <div class="floating-badge badge-1">
+          <span class="badge-dot-r"></span>Laravel
+        </div>
+        <div class="floating-badge badge-2">
+          PHP · MySQL<span class="badge-dot-l"></span>
+        </div>
+        <div class="floating-badge badge-3">
+          <span class="badge-dot-r"></span>RESTful API
+        </div>
+        <div class="floating-badge badge-4">
+          Giáo viên tiểu học<span class="badge-dot-l"></span>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="hero-avatar">
+    <div class="avatar-wrapper">
+      <span>👨‍💻</span>
+      <div class="avatar-badge">Laravel Dev</div>
+    </div>
+  </div> -->
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-wrapper">
+      <div class="section-header reveal">
+        <div class="section-tag" data-vi="01. Về tôi" data-en="01. About">
+          01. Về tôi
+        </div>
+        <h2 class="section-title" data-vi="Giới thiệu bản thân" data-en="About Me">
+          Giới thiệu bản thân
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p id="about-p1">
+            Tôi là Phạm Đăng Thư, sinh viên ngành Công nghệ Thông tin tốt
+            nghiệp tại Đại học Tây Đô. Với nền tảng vững chắc về lập trình
+            backend, tôi đam mê xây dựng các hệ thống web hiệu quả và có khả
+            năng mở rộng.
+          </p>
+          <p id="about-p2">
+            Hiện tại, tôi đang tích cực nghiên cứu và học hỏi về RPA (Robotic
+            Process Automation) với UiPath — một lĩnh vực đang tăng trưởng
+            mạnh và có tiềm năng lớn trong việc tự động hóa quy trình doanh
+            nghiệp. Tôi tin tưởng vào việc học hỏi liên tục và muốn gắn bó lâu
+            dài với công ty để cùng phát triển.
+          </p>
+          <p id="about-p3">
+            Ngoài công việc lập trình, tôi cũng có chứng chỉ nghiệp vụ sư phạm
+            tiểu học và chứng chỉ chức danh nghề nghiệp giáo viên tiểu học, cho
+            thấy sự đa dạng trong sở thích và kỹ năng của tôi. Tôi luôn sẵn
+            sàng đón nhận thử thách mới và mong muốn đóng góp giá trị thực cho
+            bộ giáo dục.
+          </p>
+          <div class="about-info">
+            <div class="info-item">
+              <div class="info-icon">🏫</div>
+              <div>
+                <div class="info-label" data-vi="Trường" data-en="University">
+                  Trường
+                </div>
+                <div class="info-val">Đại học Tây Đô (2020 – 2024)</div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <div class="info-label" data-vi="Địa điểm" data-en="Location">
+                  Địa điểm
+                </div>
+                <div class="info-val" id="about-loc">
+                  TP. Cao Lãnh, Đồng Tháp
+                </div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">💼</div>
+              <div>
+                <div class="info-label" data-vi="Vị trí ứng tuyển" data-en="Role">
+                  Vị trí ứng tuyển
+                </div>
+                <div class="info-val" id="about-role">
+                  Backend Developer / RPA Developer
+                </div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🌐</div>
+              <div>
+                <div class="info-label">GitHub</div>
+                <div class="info-val">
+                  <a href="https://github.com/phamdangthu2002" target="_blank" rel="noopener noreferrer"
+                    style="color: var(--accent); text-decoration: none">phamdangthu2002</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <div class="skill-group">
+            <div class="skill-group-title">// Languages & Frameworks</div>
+            <div class="skill-tags">
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">AngularJS</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">VB.net</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">// Frontend & Database</div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">RESTful API</span>
+              <span class="skill-tag">MVC</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">// RPA & Automation</div>
+            <div class="skill-tags">
+              <span class="skill-tag">UiPath</span>
+              <span class="skill-tag">RE Framework</span>
+              <span class="skill-tag">LINQ</span>
+              <span class="skill-tag">Exception Handling</span>
+              <span class="skill-tag">Regex</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">// Soft Skills</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Clean Code</span>
+              <span class="skill-tag">Problem Solving</span>
+              <span class="skill-tag" data-vi="Học hỏi nhanh" data-en="Quick Learner">Học hỏi nhanh</span>
+              <span class="skill-tag" data-vi="Làm việc nhóm" data-en="Teamwork">Làm việc nhóm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE TIMELINE -->
+  <section id="experience" style="background: rgba(22, 27, 34, 0.5)">
+    <div class="section-wrapper">
+      <div class="section-header reveal">
+        <div class="section-tag" data-vi="02. Kinh nghiệm" data-en="02. Experience">
+          02. Kinh nghiệm
+        </div>
+        <h2 class="section-title" data-vi="Hành trình nghề nghiệp" data-en="Career Journey">
+          Hành trình nghề nghiệp
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">03/2024 – 05/2024</div>
+          <div class="timeline-card">
+            <div class="timeline-title" data-vi="Thực tập sinh Backend — VIGI SOFTWARE"
+              data-en="Backend Intern — VIGI SOFTWARE">
+              Thực tập sinh Backend — VIGI SOFTWARE
+            </div>
+            <div class="timeline-sub">E-commerce Project</div>
+            <div class="timeline-desc" id="exp1-desc">
+              <ul>
+                <li>
+                  Xây dựng website thương mại điện tử đầy đủ chức năng: tìm
+                  kiếm sản phẩm, đăng ký, đăng nhập, quản lý giỏ hàng.
+                </li>
+                <li>
+                  Triển khai hệ thống phân quyền 3 cấp (Admin, Staff, User) để
+                  quản lý sản phẩm, danh mục và tài khoản.
+                </li>
+                <li>
+                  Thiết kế hệ thống bảo mật trang quản trị rõ ràng và hiệu
+                  quả.
+                </li>
+              </ul>
+            </div>
+            <div class="timeline-tech">
+              <span class="tech-chip">PHP</span><span class="tech-chip">HTML</span><span class="tech-chip">CSS</span>
+              <span class="tech-chip">JavaScript</span><span class="tech-chip">MySQL</span><span
+                class="tech-chip">Bootstrap</span>
+              <span class="tech-chip">ChartJS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">10/2020 – 10/2024</div>
+          <div class="timeline-card">
+            <div class="timeline-title" data-vi="Sinh viên — Đại học Tây Đô" data-en="Student — Tay Do University">
+              Sinh viên — Đại học Tây Đô
+            </div>
+            <div class="timeline-sub" data-vi="Ngành Công nghệ Thông tin" data-en="Information Technology">
+              Ngành Công nghệ Thông tin
+            </div>
+            <div class="timeline-desc" id="edu-desc">
+              <ul>
+                <li>
+                  Học lập trình hướng đối tượng, cơ sở dữ liệu, mạng máy tính,
+                  kỹ thuật phần mềm.
+                </li>
+                <li>
+                  Thực hành nhiều dự án cá nhân và nhóm trong suốt quá trình
+                  học.
+                </li>
+                <li>Đạt chứng chỉ tiếng Anh B1 năm 2024.</li>
+              </ul>
+            </div>
+            <div class="timeline-tech">
+              <span class="tech-chip">C++</span><span class="tech-chip">Java</span><span class="tech-chip">PHP</span>
+              <span class="tech-chip">MySQL</span><span class="tech-chip">VB.net</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024 – Hiện tại</div>
+          <div class="timeline-card">
+            <div class="timeline-title" data-vi="Tự học RPA / UiPath" data-en="Self-learning RPA / UiPath">
+              Tự học RPA / UiPath
+            </div>
+            <div class="timeline-sub">Robotic Process Automation</div>
+            <div class="timeline-desc" id="rpa-desc">
+              <ul>
+                <li>
+                  Nghiên cứu UiPath RE Framework, best practices và coding
+                  standards.
+                </li>
+                <li>
+                  Học xử lý ngoại lệ (exception handling), LINQ, Regular
+                  Expression trong UiPath.
+                </li>
+                <li>
+                  Theo dõi xu hướng công nghệ RPA và ứng dụng thực tiễn trong
+                  doanh nghiệp.
+                </li>
+              </ul>
+            </div>
+            <div class="timeline-tech">
+              <span class="tech-chip">UiPath</span><span class="tech-chip">RE Framework</span><span
+                class="tech-chip">LINQ</span>
+              <span class="tech-chip">Regex</span><span class="tech-chip">VB.net</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-wrapper">
+      <div class="section-header reveal">
+        <div class="section-tag" data-vi="03. Dự án" data-en="03. Projects">
+          03. Dự án
+        </div>
+        <h2 class="section-title" data-vi="Các dự án nổi bật" data-en="Featured Projects">
+          Các dự án nổi bật
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+        <a class="project-card reveal" href="https://github.com/phamdangthu2002/tieuluan" target="_blank"
+          rel="noopener noreferrer">
+          <div class="project-icon">🛒</div>
+          <div class="project-role" data-vi="Vai trò: Backend Intern • VIGI SOFTWARE"
+            data-en="Role: Backend Intern • VIGI SOFTWARE">
+            Vai trò: Backend Intern • VIGI SOFTWARE
+          </div>
+          <div class="project-name" data-vi="Website Thương mại điện tử" data-en="E-commerce Website">
+            Website Thương mại điện tử
+          </div>
+          <div class="project-desc" id="proj1-desc">
+            Website TMĐT cho phép tìm kiếm sản phẩm, đăng ký/đăng nhập và quản
+            lý giỏ hàng. Hệ thống phân quyền 3 cấp (Admin, Staff, User).
+          </div>
+          <div class="project-stack">
+            <span class="tech-chip">PHP</span><span class="tech-chip">MySQL</span><span
+              class="tech-chip">Bootstrap</span><span class="tech-chip">ChartJS</span>
+          </div>
+          <div class="project-link">GitHub →</div>
+        </a>
+
+        <a class="project-card reveal" href="https://github.com/phamdangthu2002/tmdt-laravel-angularjs" target="_blank"
+          rel="noopener noreferrer">
+          <div class="project-icon">📱</div>
+          <div class="project-role" data-vi="Vai trò: Cá nhân" data-en="Role: Personal Project">
+            Vai trò: Cá nhân • 11/2024 – 12/2024
+          </div>
+          <div class="project-name" data-vi="Website Bán Điện Thoại" data-en="Phone Sales Website">
+            Website Bán Điện Thoại
+          </div>
+          <div class="project-desc" id="proj2-desc">
+            Tích hợp RESTful API, AngularJS frontend mượt mà, phân quyền truy
+            cập, tìm kiếm theo tên và danh mục.
+          </div>
+          <div class="project-stack">
+            <span class="tech-chip">Laravel</span><span class="tech-chip">AngularJS</span><span
+              class="tech-chip">RESTful API</span><span class="tech-chip">MySQL</span>
+          </div>
+          <div class="project-link">GitHub →</div>
+        </a>
+
+        <a class="project-card reveal" href="https://github.com/phamdangthu2002/tmdt-laravel" target="_blank"
+          rel="noopener noreferrer">
+          <div class="project-icon">👗</div>
+          <div class="project-role" data-vi="Vai trò: Cá nhân" data-en="Role: Personal Project">
+            Vai trò: Cá nhân • 09/2024 – 10/2024
+          </div>
+          <div class="project-name" data-vi="Website Cửa Hàng Thời Trang" data-en="Fashion Store Website">
+            Website Cửa Hàng Thời Trang
+          </div>
+          <div class="project-desc" id="proj3-desc">
+            Đăng nhập, theo dõi đơn hàng, lịch sử mua hàng, thanh toán trực
+            tuyến. Hệ thống quản lý đơn hàng hoàn chỉnh.
+          </div>
+          <div class="project-stack">
+            <span class="tech-chip">Laravel</span><span class="tech-chip">PHP</span><span
+              class="tech-chip">Bootstrap</span><span class="tech-chip">MySQL</span>
+          </div>
+          <div class="project-link">GitHub →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & ACTIVITIES -->
+  <section id="certifications" style="background: rgba(22, 27, 34, 0.5)">
+    <div class="section-wrapper">
+      <div class="section-header reveal">
+        <div class="section-tag" data-vi="04. Chứng chỉ & Hoạt động" data-en="04. Certifications">
+          04. Chứng chỉ & Hoạt động
+        </div>
+        <h2 class="section-title" data-vi="Thành tích & Chứng chỉ" data-en="Achievements & Certifications">
+          Thành tích & Chứng chỉ
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="cert-grid reveal" style="margin-bottom: 2.5rem">
+        <div class="cert-card">
+          <div class="cert-icon">CC</div>
+          <div>
+            <div class="cert-name" data-vi="Tiếng Anh B1" data-en="English B1 Certificate">
+              Tiếng Anh B1
+            </div>
+            <div class="cert-year">2024</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🤖</div>
+          <div>
+            <div class="cert-name">UiPath Self-Study</div>
+            <div class="cert-year" data-vi="2024 — Đang học" data-en="2024 — In Progress">
+              2024 — Đang học
+            </div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🎓</div>
+          <div>
+            <div class="cert-name" data-vi="Tốt nghiệp CNTT" data-en="IT Degree">
+              Tốt nghiệp CNTT
+            </div>
+            <div class="cert-year" data-vi="Đại học Tây Đô, 2024" data-en="Tay Do University, 2024">
+              Đại học Tây Đô, 2024
+            </div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">CC</div>
+          <div>
+            <div class="cert-name" data-vi="Chứng chỉ nghiệp vụ sư phạm tiểu học" data-en="Elementary School Teaching Certificate">
+              Chứng chỉ nghiệp vụ sư phạm tiểu học
+            </div>
+            <div class="cert-year">2026</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">CC</div>
+          <div>
+            <div class="cert-name" data-vi="Chứng chỉ chức danh nghề nghiệp giáo viên tiểu học" data-en="Primary School Teacher Professional Title Certificate">
+              Chứng chỉ chức danh nghề nghiệp giáo viên tiểu học
+            </div>
+            <div class="cert-year">2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header reveal" style="margin-top: 2rem">
+        <div class="section-tag" data-vi="Sở thích & Hoạt động" data-en="Interests & Activities">
+          Sở thích & Hoạt động
+        </div>
+      </div>
+      <div class="interests-grid reveal">
+        <div class="interest-chip">
+          💻 <span data-vi="Lập trình" data-en="Coding">Lập trình</span>
+        </div>
+        <div class="interest-chip">
+          🤖
+          <span data-vi="Nghiên cứu RPA" data-en="RPA Research">Nghiên cứu RPA</span>
+        </div>
+        <div class="interest-chip">
+          🔬
+          <span data-vi="Công nghệ mới" data-en="New Technologies">Công nghệ mới</span>
+        </div>
+        <div class="interest-chip">
+          🎵 <span data-vi="Nghe nhạc" data-en="Music">Nghe nhạc</span>
+        </div>
+        <div class="interest-chip">
+          📚
+          <span data-vi="Đọc tài liệu kỹ thuật" data-en="Tech Docs">Đọc tài liệu kỹ thuật</span>
+        </div>
+        <div class="interest-chip">
+          🌐
+          <span data-vi="Open Source" data-en="Open Source">Open Source</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-wrapper">
+      <div class="section-header reveal">
+        <div class="section-tag" data-vi="05. Liên hệ" data-en="05. Contact">
+          05. Liên hệ
+        </div>
+        <h2 class="section-title" data-vi="Kết nối với tôi" data-en="Get In Touch">
+          Kết nối với tôi
+        </h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <a href="mailto:phamdangthu2002@gmail.com" class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-val">phamdangthu2002@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:0329921849" class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label" data-vi="Điện thoại" data-en="Phone">
+                Điện thoại
+              </div>
+              <div class="contact-val">0329 921 849</div>
+            </div>
+          </a>
+          <a href="https://github.com/phamdangthu2002" target="_blank" class="contact-item" rel="noopener noreferrer">
+            <div class="contact-icon">💻</div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <div class="contact-val">github.com/phamdangthu2002</div>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label" data-vi="Địa chỉ" data-en="Location">
+                Địa chỉ
+              </div>
+              <div class="contact-val" id="contact-loc">
+                TP. Cao Lãnh, Đồng Tháp
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-msg reveal">
+          <h3 data-vi="Sẵn sàng làm việc 🚀" data-en="Ready to Work 🚀">
+            Sẵn sàng làm việc 🚀
+          </h3>
+          <p id="contact-msg-text">
+            Tôi đang tìm kiếm cơ hội tham gia các dự án thực tế để phát triển
+            kỹ năng backend, RPA, sư phạm. Nếu bạn có cơ hội phù hợp hoặc muốn cùng
+            nhau xây dựng điều gì đó thú vị, hãy liên hệ với tôi!
+          </p>
+          <a href="mailto:phamdangthu2002@gmail.com" class="btn-primary" style="display: inline-flex"
+            data-vi="Gửi email ngay →" data-en="Send Email →">Gửi email ngay →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-vi="© 2026 Phạm Đăng Thư."
+      data-en="© 2024 Pham Dang Thu.">© 2026 Phạm Đăng Thư. 
+    <span style="
+          font-family: &quot;JetBrains Mono&quot;, monospace;
+          font-size: 0.75rem;
+          color: var(--text-muted);
+        ">Backend Dev · RPA Dev · Giáo viên tiểu học</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
